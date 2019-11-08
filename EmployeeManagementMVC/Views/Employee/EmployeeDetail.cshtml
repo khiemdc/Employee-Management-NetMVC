@@ -1,0 +1,24 @@
+﻿@model EmployeeManagementMVC.Models.EmployeeViewModel
+    @{
+        ViewBag.Title = "EmployeeDetails";
+        Layout = null;
+    }
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+    <div class="container" style="width:60%; margin-top:2%">
+        @if (Model != null)
+        {
+        <ul class="list-group">
+            <li class="list-group-item active">Employee Details</li>
+            <li class="list-group-item">Employee ID : <b>@Model.EmployeeId</b></li>
+            <li class="list-group-item">Employee Name : <b>@Model.Name</b></li>
+            <li class="list-group-item">Address : <b>@Model.Address</b></li>
+            <li class="list-group-item">Department ID : <b>@Model.DepartmentId</b></li>
+            <li class="list-group-item">Department Name : <b>@Model.DepartmentName</b></li>
+        </ul>
+        }
+    <p>
+        <a class="btn btn-info" href="/Employee/index">Back</a>
+    </p>
+    </div>

@@ -1,0 +1,35 @@
+﻿@model IEnumerable<EmployeeManagementMVC.Models.EmployeeViewModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<div class="container" style="width:60%; margin-top:2%">
+    @if (Model != null)
+    {
+        <table class="table table-striped">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Department Id</th>
+                <th>Department Name</th>
+                <th>Address</th>
+            </tr>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.EmployeeId</td>
+                        <td>
+                            <a href="/Employee/EmployeeDetail?id=@item.EmployeeId">@item.Name</a>
+                        </td>
+                        <td>@item.DepartmentId</td>
+                        <td>@item.DepartmentName</td>
+                        <td>@item.Address</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>
